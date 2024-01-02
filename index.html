@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calender Planner</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="heading">Calender Planner</h1>
+      <!-- <button class="view-mode-btn" onclick="displayCalender()">
+        Switch to Month View
+      </button> -->
+      <button class="dec_inc_Month" onclick="dec_inc_Month(this)">&lt;</button>
+      <button class="dec_inc_Month" onclick="dec_inc_Month(this)">&gt;</button>
+      <span class="current-month">Month</span><br>
+      <span class="current-date">Date: </span>
+    </header>
+    <div class="main">
+      <span class="days-name">Sun</span>
+      <span class="days-name">Mon</span>
+      <span class="days-name">Tue</span>
+      <span class="days-name">Wed</span>
+      <span class="days-name">Thu</span>
+      <span class="days-name">Fri</span>
+      <span class="days-name">Sat</span>
+      <span class="span-of-cells" style="background-color: cornflowerblue;"></span>
+    </div>
+    <span class="btn-span"> </span>
+  
 
-
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="calender.js"></script>
-</body>
+  </body>
 </html>

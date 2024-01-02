@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(191, 191, 238);
+}
+h1.heading {
+    background-color: burlywood;
+    display: inline;
+    padding: 5px;
+}
+.dec-month, .inc-month{
+    font-weight: bold;
+    font-size: 16px;
+}
+.current-month{
+    /* width: 50px; */
+}
+.current-date{
+    margin-left: 55px;
+    padding: 5px;
+    border: 1px solid blueviolet;
+}
+div.main{
+    background-color: coral;
+    padding: 10px;
+    border: 2px solid black; 
+    margin: 10px 0 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 798px;
+}
+.week{
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    margin: 5px;
+    background-color: rgb(149, 155, 155);
+
+
+}   
+.month{
+    display: inline-flex;
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    background-color: rgb(172, 182, 182);
+
+
+}
+
+.days-name{
+    margin: 5px;
+    padding-top: 5px;
+    color: bisque;
+    font-weight: bolder;
+    font-size: 24px;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    border: 2px dashed black;
+}
