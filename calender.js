@@ -1,6 +1,15 @@
 // console.log(`1. Rander Calaender < month >
 // 2. On double click, CRUD with LS
 // 3. save event as hoverabel dots showing detailed dialog`);
+let X = [
+  { date: "12/12/2023", msg: "working" },
+  { date: "13/12/2023", msg: "working" },
+  { date: "11/12/2023", msg: "working" },
+  { date: "9/3/2024", msg: "working" },
+  { date: "9/3/2024", msg: "working" },
+  { date: "9/2/2024", msg: "working" },
+  { date: "3/2/2024", msg: "working" },
+];
 
 function drawCalendar(startDate, endDate, viewMode) {
   //yeh kam kar lia to bas
@@ -20,33 +29,42 @@ currentDate.innerHTML += RightNow.format("DD/MM/YYYY").toString();
 
 
 function currMnthSpanHTML(rightNow) {
-  currMnthSpan.innerHTML = `${rightNow.format("DD/MMMM/YYYY").split("/")[1]} ${
-    rightNow.format("DD/MMMM/YYYY").split("/")[2]
+  currMnthSpan.innerHTML = `${rightNow.format("DD/MMMM/YYYY").split("/")[1]} 
+  ${rightNow.format("DD/MMMM/YYYY").split("/")[2]
   }`;
 }
 currMnthSpanHTML(RightNow);
 
 endOfMonth = RightNow.endOf("month").date();
 
-let LSData = [
-  { date: "12/12/2023", msg: "working" },
-  { date: "13/12/2023", msg: "working" },
-  { date: "11/12/2023", msg: "working" },
-  { date: "9/3/2024", msg: "working" },
-  { date: "9/3/2024", msg: "working" },
-  { date: "9/2/2024", msg: "working" },
-  { date: "3/2/2024", msg: "working" },
-];
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+let a = localStorage.setItem('event',JSON.stringify(X))
+let LSData = localStorage.getItem('event');
+
+function server(browserLSData) {
+  if (browserLSData) {
+    LSData = JSON.parse(LSData)
+  }else{
+    LSData = [];
+  }
+  // LSData = localStorage.setItem('event' , JSON.stringify[LSData]);
+}
+server(LSData)
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+
+
 
 function getEventsHtmlForDate(events) {
   return events.map((evt) => `${evt.date} <br>`);
 }
 
 function renderingCells(noOfCells, currMonth, currYear) {
-  let reqLsData = LSData.filter((reqObj) =>
+  let reqLsData = LSData.filter((reqObj) => 
     reqObj.date.endsWith(`${currMonth + 1}/${currYear}`)
   );
-  console.log(reqLsData);
+  // console.log(reqLsData);
 
   for (let i = 1; i <= noOfCells; i++) {
     ++day;
@@ -62,6 +80,7 @@ function dblClik(currCell, currMonth, currYear) {
   let test =
     currCell.firstChild.nodeValue + "/" + `${currMonth + 1}` + "/" + currYear;
   console.log(currCell, +currCell.firstChild.nodeValue, test);
+  openForm()
 }
 
 let dec_inc_Month = (btn) => {
