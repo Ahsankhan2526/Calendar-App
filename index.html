@@ -36,13 +36,19 @@
 
 <!-- The form with input and buttons -->
 <div id="myForm">
-  <label for="textInput">Enter Text:</label>
-  <input type="text" id="textInput">
+  <h3>Set Reminder</h3>
+  <label for="textInput" >Enter Details:</label>
+  <input required="required" type="text" id="textInput">
+  <br>
+  <label for="textDate">Enter Date:</label>
+  <input type="date" id="textDate">
   <br>
   <button onclick="saveForm()">Save</button>
   <button onclick="closeForm()">Close</button>
 </div>
-
+<!-- <li style="display: flex;">ahsn</li> -->
+<!-- <br style="display: inline; border: 1px solid black; width: 5px; height: 5px;"> -->
+<!-- <li style="list-style: disc; font-size: 111px; box-sizing: border-box;">ahsn</li> -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="calender.js"></script>
     <script src="My_crud.js"></script>

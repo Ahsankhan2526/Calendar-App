@@ -5,6 +5,18 @@ let X = [
   { date: "12/12/2023", msg: "working" },
   { date: "13/12/2023", msg: "working" },
   { date: "11/12/2023", msg: "working" },
+  { date: "11/1/2024", msg: "working" },
+  { date: "12/1/2024", msg: "working" },
+  { date: "12/1/2024", msg: "working" },
+  { date: "12/1/2024", msg: "working" },
+  { date: "12/1/2024", msg: "working" },
+  // { date: "12/1/2024", msg: "working" },
+  // { date: "12/1/2024", msg: "working" },
+  // { date: "12/1/2024", msg: "working" },
+  // { date: "12/1/2024", msg: "working" },
+  // { date: "12/1/2024", msg: "working" },
+  // { date: "12/1/2024", msg: "working" },
+  { date: "13/1/2024", msg: "working" },
   { date: "9/3/2024", msg: "working" },
   { date: "9/3/2024", msg: "working" },
   { date: "9/2/2024", msg: "working" },
@@ -57,14 +69,14 @@ server(LSData)
 
 
 function getEventsHtmlForDate(events) {
-  return events.map((evt) => `${evt.date} <br>`);
+  return events.map((evt) => { `${evt.date}`
+    return `<hr style="display: inline-block; border: 2px solid black; border-radius: 50px; width: 5px; height: 5px;">`});
 }
 
 function renderingCells(noOfCells, currMonth, currYear) {
   let reqLsData = LSData.filter((reqObj) => 
     reqObj.date.endsWith(`${currMonth + 1}/${currYear}`)
   );
-  // console.log(reqLsData);
 
   for (let i = 1; i <= noOfCells; i++) {
     ++day;
@@ -79,7 +91,9 @@ renderingCells(endOfMonth, RightNow.month(), RightNow.year());
 function dblClik(currCell, currMonth, currYear) {
   let test =
     currCell.firstChild.nodeValue + "/" + `${currMonth + 1}` + "/" + currYear;
-  console.log(currCell, +currCell.firstChild.nodeValue, test);
+  console.log(currCell.childNodes[2].childNodes);
+  console.log(+currCell.firstChild.nodeValue);
+  console.log(test);
   openForm()
 }
 
@@ -127,3 +141,21 @@ let dec_inc_Month = (btn) => {
   renderingCells(endOfMonth, RightNow.month(), RightNow.year());
   currMnthSpanHTML(RightNow);
 };
+
+
+  // Function to open the form
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+
+  // Function to save the form data (you can modify this function)
+  function saveForm() {
+    let inputValue = document.getElementById("textInput").value;
+    alert("Data Saved: " + inputValue);
+    closeForm();
+  }
+
+  // Function to close the form
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }

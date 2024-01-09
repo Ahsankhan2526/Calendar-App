@@ -59,7 +59,14 @@ div.main{
     border: 2px dashed black;
 }
 
-
+.li{
+    font-size: 10px;
+    display: flex;
+    /* align-items: flex-end; */
+    flex-direction: column;
+    line-height: 0px;
+    flex-wrap: wrap;
+}
 
 
 
